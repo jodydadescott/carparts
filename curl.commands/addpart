@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd $(dirname $0)
+source config
+
+curl -d '{"vendorId":3,partId:90,partName:"Radio",partDescription:"AM-FM",inventoryCurrentCount=1,inventoryDesiredCount=0,discontinued:true}' -X POST ${URL}/createnew

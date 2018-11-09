@@ -1,0 +1,75 @@
+h1 {
+    margin-left: 70px;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+
+form li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+form ul li label {
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+form ul li input,
+select,
+span {
+    float: left;
+    margin-bottom: 10px;
+}
+
+form textarea {
+    float: left;
+    width: 350px;
+    height: 150px;
+}
+
+[type="submit"] {
+    clear: left;
+    margin: 20px 0 0 230px;
+    font-size: 18px
+}
+
+p {
+    margin-left: 70px;
+    font-weight: bold;
+}

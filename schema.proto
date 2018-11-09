@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package carparts.proto;
+
+message CarParts {
+	repeated CarPart carPart = 1;
+}
+
+message CarPart {
+	int32 vendorId = 2;
+	int32 partId = 3;
+	string partName = 4;
+	string partDescription = 5;
+	int32 inventoryCurrentCount = 6;
+	int32 inventoryDesiredCount = 7;
+	bool discontinued = 8;
+	bool onOrder = 9;
+}

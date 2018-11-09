@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd $(dirname $0)
+source config
+
+echo "before"
+curl ${URL}/getbyid\?partid=${PARTID}
+
+curl -X POST ${URL}/increment\?partid=${PARTID}
+
+echo "after"
+curl ${URL}/getbyid\?partid=${PARTID}
