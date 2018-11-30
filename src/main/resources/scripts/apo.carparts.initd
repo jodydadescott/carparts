@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+################################################################################
+
+APP=carparts
+export JAVA_HOME=/opt/jre
+
+TAGS=" --tag app=$APP --tag net:internet:ingress=true"
+
+export PATH=/opt/carparts:$JAVA_HOME/bin:$PATH
+
+case "$1" in
+  start) 
+	policy="/usr/sbin/enforcerd  run --service-name $APP $TAGS /opt/$APP/$APP $@"
+	# echo $policy
+	$policy
+ ;;
+  *) carparts $@
+esac

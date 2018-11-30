@@ -21,16 +21,18 @@ push:
 	docker push $(DOCKER_REGISTRY)/$(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG)
 
 dist:
-	mkdir -p dist
 	make java
-	cp target/carparts-core.jar dist/carparts.jar
-	chmod 644 dist/carparts.jar
-	cp -r src/main/resources/webapp dist
-	cp -r src/main/resources/entrypoint.sh dist
-	chmod +x dist/entrypoint.sh
+	mkdir -p dist
+	mkdir -p dist/carparts
+	cp target/carparts-core.jar dist/carparts/carparts.jar
+	chmod 644 dist/carparts/carparts.jar
+	cp -r src/main/resources/webapp dist/carparts
+	cp src/main/resources/scripts/carparts dist/carparts
+	chmod +x dist/carparts/carparts
 
 docker:
 	make dist
+	cp src/main/resources/scripts/entrypoint.sh dist
 	make target/_docker
 
 dockerrun:

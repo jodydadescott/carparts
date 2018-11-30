@@ -9,6 +9,8 @@ RUN apk add bash curl bind-tools
 
 RUN apk add git zip unzip
 
-ADD dist /carparts
+ADD dist/carparts /
+ADD dist/entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 
 CMD ["/entrypoint.sh"]

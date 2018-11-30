@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+################################################################################
+
+# set -x
+
+JAVA_HOME=/opt/jre
+
+################################################################################
+
+APP=carparts
+PID_FILE="/tmp/$APP/pid"
+LOG_FILE="/tmp/$APP/log"
+JAR=${APP}.jar
+
+################################################################################
+
+function main() {
+  cd $(dirname $0)
+  mkdir -p $(dirname $PID_FILE)
+  mkdir -p $(dirname $LOG_FILE)
+  case "$1" in
+    start) start ;;
+    stop) stop ;;
+    restart) restart ;;
+    status) status ;;
+    *) echo $"Usage: $0 {start|stop|restart|status}"; exit 1
+  esac
+}
+
+function start() {
+  [[ $JAVA_HOME ]] && { PATH=$JAVA_HOME/bin:$PATH; }
+  which java > /dev/null 2>&1 || { _err "java not found"; return 2; }
+  pid=$(_getpid)
+  [ $pid -eq 0 ] || { _err "$APP is already running"; return 2; }
+  nohup java -server -jar $JAR >> $LOG_FILE 2>&1 & echo $! > $PID_FILE
+  sleep 1
+  pid=$(_getpid)
+  [ $pid -eq 0 ] && { _err "Failed to start $APP, see log file $LOG_FILE"; return 3; }
+  return 0
+}
+
+function stop() {
+  pid=$(_getpid)
+  [ $pid -eq 0 ] && { _err "$APP is not running"; return 2; }
+  kill $pid && { rm $PID_FILE; }
+}
+
+function restart() {
+  pid=$(_getpid)
+  [ $pid -eq 0 ] || { stop; sleep 3; }
+  start
+}
+
+function status() {
+  pid=$(_getpid)
+  [ $pid -eq 0 ] && { _err "$APP is not running"; } ||
+     { _err "$APP is running with pid $pid and logging to $LOG_FILE"; }
+  return 0
+}
+
+function _getpid() {
+  [ -f $PID_FILE ] || { echo 0; return 0; }
+  pid=$(<$PID_FILE)
+  ps $pid > /dev/null 2>&1 || { rm $PID_FILE; echo 0; return 0; }
+  echo $pid
+  return 0
+}
+
+function _err() { printf "%s\n" "$*" >&2; }
+
+main $@

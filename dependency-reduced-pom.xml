@@ -7,14 +7,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <includes>
-          <include>**</include>
-        </includes>
-      </resource>
-    </resources>
     <finalName>${groupId}-${artifactId}</finalName>
     <plugins>
       <plugin>
