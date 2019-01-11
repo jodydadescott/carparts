@@ -1,6 +1,7 @@
 package carparts.rest;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,8 @@ import com.google.protobuf.util.JsonFormat;
 import carparts.CloudException;
 import carparts.api.CarPartApi;
 import carparts.proto.Schema.CarPart;
+import carparts.proto.Schema.ProtoEntry;
+import carparts.proto.Schema.XHeaders;
 import carparts.util.FString;
 
 public class CarPartServlet extends RestServlet {
@@ -22,10 +25,12 @@ public class CarPartServlet extends RestServlet {
 	private static final long serialVersionUID = 1L;
 
 	private final CarPartApi api;
+	private final MyDefaultServlet defaultServlet;
 
-	CarPartServlet(CarPartApi api) {
+	CarPartServlet(CarPartApi api, MyDefaultServlet defaultServlet) {
 		assert api != null;
 		this.api = api;
+		this.defaultServlet = defaultServlet;
 	}
 
 	@Override
@@ -53,12 +58,20 @@ public class CarPartServlet extends RestServlet {
 				break;
 			}
 
+			case "getxheaders": {
+				response.setContentType("application/json");
+				response.getWriter().println(protoToString(getXHeaders(request).build()));
+				break;
+			}
+
 			default:
-				throw CloudException.requestMalformed(FString.format("Enpoint {} not mapped", endpoint));
+				defaultServlet.doGet(request, response);
 
 			}
 
-		} catch (CloudException e) {
+		} catch (
+
+		CloudException e) {
 			response.setStatus(HttpServletResponse.SC_CONFLICT);
 			response.getWriter().println(e.toString());
 		}
@@ -76,14 +89,14 @@ public class CarPartServlet extends RestServlet {
 			switch (endpoint) {
 
 			case "createnew": {
-				api.put(builder(getData(request).toString()).build());
+				api.put(jsonToCarPartBuilder(getData(request).toString()).build());
 				response.setContentType("application/text");
 				response.getWriter().println("ok");
 				break;
 			}
 
 			case "update": {
-				api.put(builder(getData(request).toString()).build());
+				api.put(jsonToCarPartBuilder(getData(request).toString()).build());
 				response.setContentType("application/text");
 				response.getWriter().println("ok");
 				break;
@@ -122,6 +135,21 @@ public class CarPartServlet extends RestServlet {
 
 	}
 
+	private XHeaders.Builder getXHeaders(HttpServletRequest request) {
+		assert request != null;
+
+		XHeaders.Builder xHeadersBuilder = XHeaders.newBuilder();
+
+		Enumeration<String> headerNames = request.getHeaderNames();
+		while (headerNames.hasMoreElements()) {
+			String key = headerNames.nextElement();
+			String value = request.getHeader(key);
+			xHeadersBuilder.addProtoEntry(ProtoEntry.newBuilder().setKey(key).setValue(value));
+		}
+
+		return xHeadersBuilder;
+	}
+
 	private String protoToString(MessageOrBuilder m) {
 		try {
 			return JsonFormat.printer().print(m);
@@ -136,7 +164,7 @@ public class CarPartServlet extends RestServlet {
 		return getIntegerParam("partid", request);
 	}
 
-	private CarPart.Builder builder(String json) {
+	private CarPart.Builder jsonToCarPartBuilder(String json) {
 
 		CarPart.Builder result = CarPart.newBuilder();
 		try {

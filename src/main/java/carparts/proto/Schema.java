@@ -1863,6 +1863,1475 @@ public final class Schema {
 
   }
 
+  public interface XHeadersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:carparts.proto.XHeaders)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    java.util.List<carparts.proto.Schema.ProtoEntry> 
+        getProtoEntryList();
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    carparts.proto.Schema.ProtoEntry getProtoEntry(int index);
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    int getProtoEntryCount();
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    java.util.List<? extends carparts.proto.Schema.ProtoEntryOrBuilder> 
+        getProtoEntryOrBuilderList();
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    carparts.proto.Schema.ProtoEntryOrBuilder getProtoEntryOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code carparts.proto.XHeaders}
+   */
+  public  static final class XHeaders extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:carparts.proto.XHeaders)
+      XHeadersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use XHeaders.newBuilder() to construct.
+    private XHeaders(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private XHeaders() {
+      protoEntry_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private XHeaders(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                protoEntry_ = new java.util.ArrayList<carparts.proto.Schema.ProtoEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              protoEntry_.add(
+                  input.readMessage(carparts.proto.Schema.ProtoEntry.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          protoEntry_ = java.util.Collections.unmodifiableList(protoEntry_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return carparts.proto.Schema.internal_static_carparts_proto_XHeaders_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return carparts.proto.Schema.internal_static_carparts_proto_XHeaders_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              carparts.proto.Schema.XHeaders.class, carparts.proto.Schema.XHeaders.Builder.class);
+    }
+
+    public static final int PROTOENTRY_FIELD_NUMBER = 1;
+    private java.util.List<carparts.proto.Schema.ProtoEntry> protoEntry_;
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    public java.util.List<carparts.proto.Schema.ProtoEntry> getProtoEntryList() {
+      return protoEntry_;
+    }
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    public java.util.List<? extends carparts.proto.Schema.ProtoEntryOrBuilder> 
+        getProtoEntryOrBuilderList() {
+      return protoEntry_;
+    }
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    public int getProtoEntryCount() {
+      return protoEntry_.size();
+    }
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    public carparts.proto.Schema.ProtoEntry getProtoEntry(int index) {
+      return protoEntry_.get(index);
+    }
+    /**
+     * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+     */
+    public carparts.proto.Schema.ProtoEntryOrBuilder getProtoEntryOrBuilder(
+        int index) {
+      return protoEntry_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < protoEntry_.size(); i++) {
+        output.writeMessage(1, protoEntry_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < protoEntry_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, protoEntry_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof carparts.proto.Schema.XHeaders)) {
+        return super.equals(obj);
+      }
+      carparts.proto.Schema.XHeaders other = (carparts.proto.Schema.XHeaders) obj;
+
+      boolean result = true;
+      result = result && getProtoEntryList()
+          .equals(other.getProtoEntryList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getProtoEntryCount() > 0) {
+        hash = (37 * hash) + PROTOENTRY_FIELD_NUMBER;
+        hash = (53 * hash) + getProtoEntryList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static carparts.proto.Schema.XHeaders parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static carparts.proto.Schema.XHeaders parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static carparts.proto.Schema.XHeaders parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(carparts.proto.Schema.XHeaders prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code carparts.proto.XHeaders}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:carparts.proto.XHeaders)
+        carparts.proto.Schema.XHeadersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return carparts.proto.Schema.internal_static_carparts_proto_XHeaders_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return carparts.proto.Schema.internal_static_carparts_proto_XHeaders_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                carparts.proto.Schema.XHeaders.class, carparts.proto.Schema.XHeaders.Builder.class);
+      }
+
+      // Construct using carparts.proto.Schema.XHeaders.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getProtoEntryFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (protoEntryBuilder_ == null) {
+          protoEntry_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          protoEntryBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return carparts.proto.Schema.internal_static_carparts_proto_XHeaders_descriptor;
+      }
+
+      @java.lang.Override
+      public carparts.proto.Schema.XHeaders getDefaultInstanceForType() {
+        return carparts.proto.Schema.XHeaders.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public carparts.proto.Schema.XHeaders build() {
+        carparts.proto.Schema.XHeaders result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public carparts.proto.Schema.XHeaders buildPartial() {
+        carparts.proto.Schema.XHeaders result = new carparts.proto.Schema.XHeaders(this);
+        int from_bitField0_ = bitField0_;
+        if (protoEntryBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            protoEntry_ = java.util.Collections.unmodifiableList(protoEntry_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.protoEntry_ = protoEntry_;
+        } else {
+          result.protoEntry_ = protoEntryBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof carparts.proto.Schema.XHeaders) {
+          return mergeFrom((carparts.proto.Schema.XHeaders)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(carparts.proto.Schema.XHeaders other) {
+        if (other == carparts.proto.Schema.XHeaders.getDefaultInstance()) return this;
+        if (protoEntryBuilder_ == null) {
+          if (!other.protoEntry_.isEmpty()) {
+            if (protoEntry_.isEmpty()) {
+              protoEntry_ = other.protoEntry_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProtoEntryIsMutable();
+              protoEntry_.addAll(other.protoEntry_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.protoEntry_.isEmpty()) {
+            if (protoEntryBuilder_.isEmpty()) {
+              protoEntryBuilder_.dispose();
+              protoEntryBuilder_ = null;
+              protoEntry_ = other.protoEntry_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              protoEntryBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProtoEntryFieldBuilder() : null;
+            } else {
+              protoEntryBuilder_.addAllMessages(other.protoEntry_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        carparts.proto.Schema.XHeaders parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (carparts.proto.Schema.XHeaders) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<carparts.proto.Schema.ProtoEntry> protoEntry_ =
+        java.util.Collections.emptyList();
+      private void ensureProtoEntryIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          protoEntry_ = new java.util.ArrayList<carparts.proto.Schema.ProtoEntry>(protoEntry_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          carparts.proto.Schema.ProtoEntry, carparts.proto.Schema.ProtoEntry.Builder, carparts.proto.Schema.ProtoEntryOrBuilder> protoEntryBuilder_;
+
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public java.util.List<carparts.proto.Schema.ProtoEntry> getProtoEntryList() {
+        if (protoEntryBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(protoEntry_);
+        } else {
+          return protoEntryBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public int getProtoEntryCount() {
+        if (protoEntryBuilder_ == null) {
+          return protoEntry_.size();
+        } else {
+          return protoEntryBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public carparts.proto.Schema.ProtoEntry getProtoEntry(int index) {
+        if (protoEntryBuilder_ == null) {
+          return protoEntry_.get(index);
+        } else {
+          return protoEntryBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder setProtoEntry(
+          int index, carparts.proto.Schema.ProtoEntry value) {
+        if (protoEntryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProtoEntryIsMutable();
+          protoEntry_.set(index, value);
+          onChanged();
+        } else {
+          protoEntryBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder setProtoEntry(
+          int index, carparts.proto.Schema.ProtoEntry.Builder builderForValue) {
+        if (protoEntryBuilder_ == null) {
+          ensureProtoEntryIsMutable();
+          protoEntry_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          protoEntryBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder addProtoEntry(carparts.proto.Schema.ProtoEntry value) {
+        if (protoEntryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProtoEntryIsMutable();
+          protoEntry_.add(value);
+          onChanged();
+        } else {
+          protoEntryBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder addProtoEntry(
+          int index, carparts.proto.Schema.ProtoEntry value) {
+        if (protoEntryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProtoEntryIsMutable();
+          protoEntry_.add(index, value);
+          onChanged();
+        } else {
+          protoEntryBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder addProtoEntry(
+          carparts.proto.Schema.ProtoEntry.Builder builderForValue) {
+        if (protoEntryBuilder_ == null) {
+          ensureProtoEntryIsMutable();
+          protoEntry_.add(builderForValue.build());
+          onChanged();
+        } else {
+          protoEntryBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder addProtoEntry(
+          int index, carparts.proto.Schema.ProtoEntry.Builder builderForValue) {
+        if (protoEntryBuilder_ == null) {
+          ensureProtoEntryIsMutable();
+          protoEntry_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          protoEntryBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder addAllProtoEntry(
+          java.lang.Iterable<? extends carparts.proto.Schema.ProtoEntry> values) {
+        if (protoEntryBuilder_ == null) {
+          ensureProtoEntryIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, protoEntry_);
+          onChanged();
+        } else {
+          protoEntryBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder clearProtoEntry() {
+        if (protoEntryBuilder_ == null) {
+          protoEntry_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          protoEntryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public Builder removeProtoEntry(int index) {
+        if (protoEntryBuilder_ == null) {
+          ensureProtoEntryIsMutable();
+          protoEntry_.remove(index);
+          onChanged();
+        } else {
+          protoEntryBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public carparts.proto.Schema.ProtoEntry.Builder getProtoEntryBuilder(
+          int index) {
+        return getProtoEntryFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public carparts.proto.Schema.ProtoEntryOrBuilder getProtoEntryOrBuilder(
+          int index) {
+        if (protoEntryBuilder_ == null) {
+          return protoEntry_.get(index);  } else {
+          return protoEntryBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public java.util.List<? extends carparts.proto.Schema.ProtoEntryOrBuilder> 
+           getProtoEntryOrBuilderList() {
+        if (protoEntryBuilder_ != null) {
+          return protoEntryBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(protoEntry_);
+        }
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public carparts.proto.Schema.ProtoEntry.Builder addProtoEntryBuilder() {
+        return getProtoEntryFieldBuilder().addBuilder(
+            carparts.proto.Schema.ProtoEntry.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public carparts.proto.Schema.ProtoEntry.Builder addProtoEntryBuilder(
+          int index) {
+        return getProtoEntryFieldBuilder().addBuilder(
+            index, carparts.proto.Schema.ProtoEntry.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .carparts.proto.ProtoEntry protoEntry = 1;</code>
+       */
+      public java.util.List<carparts.proto.Schema.ProtoEntry.Builder> 
+           getProtoEntryBuilderList() {
+        return getProtoEntryFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          carparts.proto.Schema.ProtoEntry, carparts.proto.Schema.ProtoEntry.Builder, carparts.proto.Schema.ProtoEntryOrBuilder> 
+          getProtoEntryFieldBuilder() {
+        if (protoEntryBuilder_ == null) {
+          protoEntryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              carparts.proto.Schema.ProtoEntry, carparts.proto.Schema.ProtoEntry.Builder, carparts.proto.Schema.ProtoEntryOrBuilder>(
+                  protoEntry_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          protoEntry_ = null;
+        }
+        return protoEntryBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:carparts.proto.XHeaders)
+    }
+
+    // @@protoc_insertion_point(class_scope:carparts.proto.XHeaders)
+    private static final carparts.proto.Schema.XHeaders DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new carparts.proto.Schema.XHeaders();
+    }
+
+    public static carparts.proto.Schema.XHeaders getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<XHeaders>
+        PARSER = new com.google.protobuf.AbstractParser<XHeaders>() {
+      @java.lang.Override
+      public XHeaders parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new XHeaders(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<XHeaders> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<XHeaders> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public carparts.proto.Schema.XHeaders getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProtoEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:carparts.proto.ProtoEntry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>string value = 2;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>string value = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+  }
+  /**
+   * Protobuf type {@code carparts.proto.ProtoEntry}
+   */
+  public  static final class ProtoEntry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:carparts.proto.ProtoEntry)
+      ProtoEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ProtoEntry.newBuilder() to construct.
+    private ProtoEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ProtoEntry() {
+      key_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ProtoEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return carparts.proto.Schema.internal_static_carparts_proto_ProtoEntry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return carparts.proto.Schema.internal_static_carparts_proto_ProtoEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              carparts.proto.Schema.ProtoEntry.class, carparts.proto.Schema.ProtoEntry.Builder.class);
+    }
+
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string key = 1;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object value_;
+    /**
+     * <code>string value = 2;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string value = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof carparts.proto.Schema.ProtoEntry)) {
+        return super.equals(obj);
+      }
+      carparts.proto.Schema.ProtoEntry other = (carparts.proto.Schema.ProtoEntry) obj;
+
+      boolean result = true;
+      result = result && getKey()
+          .equals(other.getKey());
+      result = result && getValue()
+          .equals(other.getValue());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static carparts.proto.Schema.ProtoEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(carparts.proto.Schema.ProtoEntry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code carparts.proto.ProtoEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:carparts.proto.ProtoEntry)
+        carparts.proto.Schema.ProtoEntryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return carparts.proto.Schema.internal_static_carparts_proto_ProtoEntry_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return carparts.proto.Schema.internal_static_carparts_proto_ProtoEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                carparts.proto.Schema.ProtoEntry.class, carparts.proto.Schema.ProtoEntry.Builder.class);
+      }
+
+      // Construct using carparts.proto.Schema.ProtoEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        key_ = "";
+
+        value_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return carparts.proto.Schema.internal_static_carparts_proto_ProtoEntry_descriptor;
+      }
+
+      @java.lang.Override
+      public carparts.proto.Schema.ProtoEntry getDefaultInstanceForType() {
+        return carparts.proto.Schema.ProtoEntry.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public carparts.proto.Schema.ProtoEntry build() {
+        carparts.proto.Schema.ProtoEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public carparts.proto.Schema.ProtoEntry buildPartial() {
+        carparts.proto.Schema.ProtoEntry result = new carparts.proto.Schema.ProtoEntry(this);
+        result.key_ = key_;
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof carparts.proto.Schema.ProtoEntry) {
+          return mergeFrom((carparts.proto.Schema.ProtoEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(carparts.proto.Schema.ProtoEntry other) {
+        if (other == carparts.proto.Schema.ProtoEntry.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        carparts.proto.Schema.ProtoEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (carparts.proto.Schema.ProtoEntry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <code>string value = 2;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:carparts.proto.ProtoEntry)
+    }
+
+    // @@protoc_insertion_point(class_scope:carparts.proto.ProtoEntry)
+    private static final carparts.proto.Schema.ProtoEntry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new carparts.proto.Schema.ProtoEntry();
+    }
+
+    public static carparts.proto.Schema.ProtoEntry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProtoEntry>
+        PARSER = new com.google.protobuf.AbstractParser<ProtoEntry>() {
+      @java.lang.Override
+      public ProtoEntry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ProtoEntry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProtoEntry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProtoEntry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public carparts.proto.Schema.ProtoEntry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_carparts_proto_CarParts_descriptor;
   private static final 
@@ -1873,6 +3342,16 @@ public final class Schema {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_carparts_proto_CarPart_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_carparts_proto_XHeaders_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_carparts_proto_XHeaders_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_carparts_proto_ProtoEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_carparts_proto_ProtoEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1888,8 +3367,10 @@ public final class Schema {
       "rtId\030\003 \001(\005\022\020\n\010partName\030\004 \001(\t\022\027\n\017partDesc" +
       "ription\030\005 \001(\t\022\035\n\025inventoryCurrentCount\030\006" +
       " \001(\005\022\035\n\025inventoryDesiredCount\030\007 \001(\005\022\024\n\014d" +
-      "iscontinued\030\010 \001(\010\022\017\n\007onOrder\030\t \001(\010b\006prot" +
-      "o3"
+      "iscontinued\030\010 \001(\010\022\017\n\007onOrder\030\t \001(\010\":\n\010XH" +
+      "eaders\022.\n\nprotoEntry\030\001 \003(\0132\032.carparts.pr" +
+      "oto.ProtoEntry\"(\n\nProtoEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1915,6 +3396,18 @@ public final class Schema {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_carparts_proto_CarPart_descriptor,
         new java.lang.String[] { "VendorId", "PartId", "PartName", "PartDescription", "InventoryCurrentCount", "InventoryDesiredCount", "Discontinued", "OnOrder", });
+    internal_static_carparts_proto_XHeaders_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_carparts_proto_XHeaders_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_carparts_proto_XHeaders_descriptor,
+        new java.lang.String[] { "ProtoEntry", });
+    internal_static_carparts_proto_ProtoEntry_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_carparts_proto_ProtoEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_carparts_proto_ProtoEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

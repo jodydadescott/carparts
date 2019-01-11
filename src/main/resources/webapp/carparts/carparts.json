@@ -1,0 +1,27 @@
+    {
+        "carPart": [{
+                "vendorId": 1001,
+                "partId": 100224,
+                "partName": "SparkPlug",
+                "partDescription": "SparkPlug",
+                "inventoryCurrentCount": 111,
+                "inventoryDesiredCount": 22
+            },
+            {
+                "vendorId": 1001,
+                "partId": 100453,
+                "partName": "BigMuffler",
+                "partDescription": "BigMuffler",
+                "inventoryCurrentCount": 10,
+                "inventoryDesiredCount": 8
+            },
+            {
+                "vendorId": 357,
+                "partId": 4598443,
+                "partName": "Starter",
+                "partDescription": "Starter",
+                "inventoryCurrentCount": 2,
+                "discontinued": true
+            }
+        ]
+    }

@@ -16,3 +16,12 @@ message CarPart {
 	bool discontinued = 8;
 	bool onOrder = 9;
 }
+
+message XHeaders {
+	repeated ProtoEntry protoEntry = 1;
+}
+
+message ProtoEntry {
+	string key = 1;
+	string value = 2;
+}

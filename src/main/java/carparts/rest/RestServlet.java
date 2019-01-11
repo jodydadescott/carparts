@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import carparts.CloudException;
 import carparts.util.FString;
 
-public class RestServlet extends HttpServlet {
+public abstract class RestServlet extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -24,13 +24,6 @@ public class RestServlet extends HttpServlet {
 		}
 		return value;
 	}
-
-	// protected String getStringParamOrNull(String key, HttpServletRequest
-	// request) {
-	// assert key != null;
-	// assert request != null;
-	// return request.getParameter(key);
-	// }
 
 	protected int getIntegerParam(String key, HttpServletRequest request) throws CloudException {
 		assert key != null;

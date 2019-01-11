@@ -1,15 +1,12 @@
 package carparts.rest;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.DefaultHandler;
 import org.eclipse.jetty.server.handler.HandlerList;
-import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import org.eclipse.jetty.util.resource.PathResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +14,7 @@ import carparts.api.CarPartApi;
 
 public class RestServer {
 
-	private static final Logger LOG = LoggerFactory.getLogger(RestServer2.class);
+	private static final Logger LOG = LoggerFactory.getLogger(RestServer.class);
 
 	private static int DEFAULT_PORT = 8080;
 
@@ -40,58 +37,54 @@ public class RestServer {
 		synchronized (lock) {
 			if (this.server == null) {
 
-				this.server = new Server(port);
+				try {
 
-				ServletContextHandler context = new ServletContextHandler();
-				ServletHolder servletHolder = new ServletHolder();
-				HandlerList handlers = new HandlerList();
-				handlers.addHandler(context);
+					if (webAppPath == null) {
+						throw new RuntimeException("webAppPath is not configured");
 
-				CarPartServlet carPartServlet = new CarPartServlet(api);
-				servletHolder.setServlet(carPartServlet);
-
-				// Mapping to a few different URIs
-
-				context.getServletHandler().addServletWithMapping(servletHolder, "/public/*");
-				context.getServletHandler().addServletWithMapping(servletHolder, "/private/*");
-				context.getServletHandler().addServletWithMapping(servletHolder, "/internal/*");
-
-				ServletHolder staticHolder = new ServletHolder("default", DefaultServlet.class);
-				context.setContextPath("/");
-				context.addServlet(staticHolder, "/");
-
-				if (webAppPath != null) {
-
-					try {
-
-						File filePath = new File(webAppPath);
-						if (!filePath.exists()) {
-							throw new RuntimeException("Directory " + webAppPath + " not found");
-						}
-
-						context.setBaseResource(new PathResource(filePath.toPath().toRealPath()));
-
-					} catch (IOException e) {
-						// e.printStackTrace();
-						throw new RuntimeException(e);
 					}
+
+					File filePath = new File(webAppPath);
+					if (!filePath.exists()) {
+						throw new RuntimeException("Directory " + webAppPath + " not found");
+					}
+
+					this.server = new Server(port);
+
+					ServletContextHandler context = new ServletContextHandler();
+					context.setContextPath("/");
+
+					MyDefaultServlet myDefaultServlet = new MyDefaultServlet();
+					ServletHolder staticHolder = new ServletHolder("default", myDefaultServlet);
+					staticHolder.setInitParameter("resourceBase", webAppPath);
+					context.addServlet(staticHolder, "/");
+
+					HandlerList handlers = new HandlerList();
+					handlers.addHandler(context);
+
+					ServletHolder carPartServletHolder = new ServletHolder();
+					CarPartServlet carPartServlet = new CarPartServlet(api, myDefaultServlet);
+					carPartServletHolder.setServlet(carPartServlet);
+					context.addServlet(carPartServletHolder, "/carparts/*");
+
+					ServletHolder xHeadersServletHolder = new ServletHolder();
+					XHeadersServlet xHeadersServlet = new XHeadersServlet();
+					xHeadersServletHolder.setServlet(xHeadersServlet);
+					context.addServlet(xHeadersServletHolder, "/xheaders/*");
 
 					handlers.addHandler(new DefaultHandler());
-				}
 
-				server.setHandler(handlers);
+					server.setHandler(handlers);
 
-				LOG.info("Running on port {}", port);
+					LOG.info("Running on port {}", port);
 
-				try {
 					LOG.trace("enter void start()");
 
-					try {
-						this.server.start();
+					this.server.start();
 
-					} catch (Exception e) {
-						throw new RuntimeException(e);
-					}
+				} catch (Exception e) {
+					throw new RuntimeException(e);
+
 				} finally {
 					LOG.trace("exit void start()");
 				}
