@@ -1,4 +1,4 @@
 # carparts
 
 # Deploy as Docker container
-get pull jodydadescott/carparts
+docker pull jodydadescott/carparts
